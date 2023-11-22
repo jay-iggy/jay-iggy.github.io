@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Justin Ignatowski Portfolio",
-    "currentPage": "portfolio.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -70,7 +70,7 @@
     "publishChangesOnly": true
   },
   "pages": {
-    "portfolio.html": {
+    "index.html": {
       "settings": {
         "main": true,
         "title": "Justin Ignatowski Portfolio",
