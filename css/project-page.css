@@ -55,7 +55,7 @@
     text-align: left;
   }
   details > summary > h2 {
-    font-size: 130%;
+    font-size: 115%;
   }
 }
 
@@ -177,20 +177,19 @@ img{
 }
 
 details {
-  align-items: center;
 
   display: flex;
   flex-direction: column;
-  align-self: center;
-  align-content: center;
-  justify-self: center;
-  justify-content: center;
+  overflow: hidden;
 
   list-style: none; /* Works in most browsers */
 
   margin-top: 20px;
   width: 100%;
   text-align: justify;
+
+  padding: 10px;
+
 }
 details > summary {
   border: none;
@@ -201,13 +200,11 @@ details > summary {
   column-gap: 15px;
   cursor: pointer;
 
-  text-align: center;
   font-size: 100%;
 }
 details > summary > h2 {
   margin:0;
-  text-align: center;
-
+  text-align: left;
 }
 details > p{
   font-size: 115%;
@@ -230,13 +227,33 @@ summary::-webkit-details-marker {
 summary::before {
   content: '▶';
   scale: 70%;
-  margin-right: 0.5rem;
+  margin-right: 0.2rem;
   transition: transform 0.2s ease;
-  margin-left: -15px;
 }
 
 /*Rotate the arrow when the details are open */
 details[open] summary::before {
   transform: rotate(90deg);
+}
+
+/* Enable animation to 'auto' for the whole page */
+:root {
+  interpolate-size: allow-keywords;
+}
+
+/* Animate the content when the details state changes */
+details::details-content {
+  transition: opacity 0.2s ease, block-size 0.2s ease, content-visibility 0.2s ease;
+  transition-behavior: allow-discrete;
+  block-size: 0;
+  overflow: hidden; /* Required for height animation */
+  opacity: 0;
+}
+
+/* Define the open state styles */
+details[open]::details-content {
+  block-size: auto;
+  overflow: hidden;
+  opacity: 1;
 }
 
