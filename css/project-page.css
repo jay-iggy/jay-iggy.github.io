@@ -51,6 +51,12 @@
     margin-right: 40px;
     text-align: left;
   }
+  details > p {
+    text-align: left;
+  }
+  details > summary > h2 {
+    font-size: 100%;
+  }
 }
 
 .project-title-img {
@@ -63,7 +69,6 @@
 
 
 .bkg-image {
-
   position:fixed;
   top: 0;
   left: 0;
@@ -115,6 +120,10 @@ iframe {
   width: 100%;
   border-radius: 0;
 }
+.store-link-container img:hover {
+  scale: 110%;
+  filter: brightness(150%);
+}
 
 .horizontal {
   display: flex;
@@ -156,6 +165,7 @@ iframe {
 
 h2{
   margin-bottom: 10px;
+  text-align: left;
 }
 p{
   margin-top: 10px;
@@ -165,3 +175,68 @@ p{
 img{
   border-radius: 15px;
 }
+
+details {
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-content: center;
+  justify-self: center;
+  justify-content: center;
+
+  list-style: none; /* Works in most browsers */
+
+  margin-top: 20px;
+  width: 100%;
+  text-align: justify;
+}
+details > summary {
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: var(--babyblue);
+  display: flex;
+  column-gap: 15px;
+  cursor: pointer;
+
+  text-align: center;
+  font-size: 140%;
+}
+details > summary > h2 {
+  margin:0;
+  text-align: center;
+
+}
+details > p{
+  font-size: 115%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+details > img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*  Remove the arrow for Safari specifically */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/*  Add your own custom arrow using a pseudo-element */
+summary::before {
+  content: '▶';
+  scale: 70%;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+  margin-left: -15px;
+}
+
+/*Rotate the arrow when the details are open */
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
