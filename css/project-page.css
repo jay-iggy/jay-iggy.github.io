@@ -202,7 +202,7 @@ details > summary {
   cursor: pointer;
 
   text-align: center;
-  font-size: 115%;
+  font-size: 100%;
 }
 details > summary > h2 {
   margin:0;
