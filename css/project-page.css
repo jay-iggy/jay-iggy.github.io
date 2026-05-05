@@ -198,7 +198,7 @@ details > summary {
   padding-right: 20px;
   color: var(--babyblue);
   display: flex;
-  column-gap: 15px;
+  column-gap: 5px;
   cursor: pointer;
 
   font-size: 100%;
@@ -226,15 +226,21 @@ summary::-webkit-details-marker {
 
 /*  Add your own custom arrow using a pseudo-element */
 .collapsible-header::before {
-  content: '▶';
-  scale: 70%;
+  content: '';
+  background-image: url("/assets/arrow-icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: center;
+  width: 20px;
+  height: 20px;
   margin-right: 0.2rem;
   transition: transform 0.2s ease;
+  transform: rotate(90deg);
 }
 
 /*Rotate the arrow when the details are open */
 details[open] .collapsible-header::before {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }
 
 /* Enable animation to 'auto' for the whole page */
@@ -280,11 +286,32 @@ pre > code {
   background: var(--brightblue);
   height: 100%;
   padding: 10px;
+  padding-left: 20px;
   border-radius: 20px;
   transition: 0.2s ease;
+  display: flex;
+  justify-content: space-between;
 }
 .accordion > details[open] > summary {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+.accordion > details > summary::after {
+  content: '';
+  background-image: url("/assets/arrow-icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: center;
+  width: 25px;
+  height: 25px;
+  margin-right: 1rem;
+  transition: transform 0.2s ease;
+
+}
+
+
+/*Rotate the arrow when the details are open */
+.accordion > details[open] > summary::after {
+  transform: rotate(180deg);
 }
 
