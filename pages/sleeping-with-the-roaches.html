@@ -60,13 +60,13 @@
         <b>Tech Team:</b> Audrey Gross, Justin Ignatowski, Milo Jacobs, Owen Knizak</p>
 
       <details open>
-        <summary><h2>My Role on the Project</h2></summary>
+        <summary class="collapsible-header"><h2>My Role on the Project</h2></summary>
         <p>As part of the 6-person development team, my responsibilities included: programming player characters, designing/implementing User Interface, programming the dialogue system, writing dialogue, and level design.</p>
         <p>I had the most previous experience with Unreal Engine, and as such, I helped the other members of the team through its quirks.</p>
       </details>
 
       <details open id="characters">
-        <summary><h2>Characters</h2></summary>
+        <summary class="collapsible-header"><h2>Characters</h2></summary>
         <p>Our main gameplay mechanic is a rope that tethers the two players together. However, Unreal's Character Movement component was incompatible with our tether mechanic and we had to create our own movement system from scratch.</p>
         <p>We also decided not to use Unreal's multiplayer options or implement controller support since one of the functions we relied on for our aiming system used the mouse position and we decided for both characters to be controlled on the same keyboard and mouse.</p>
         <p>Despite being a game featuring two characters, both are controlled by a single keyboard and mouse. In Unreal, I was unable to get two different Pawns to be controlled by the same input device. The solution was to create a single pawn we called InputHub that acted as a middleman and passed along the inputs from the user to the two characters.</p>
@@ -85,7 +85,7 @@
       </details>
 
       <details open id="dialogue">
-        <summary><h2>Dialogue</h2></summary>
+        <summary class="collapsible-header"><h2>Dialogue</h2></summary>
         <p>The core of the UI architecture is the Widget Stack class. This class is a User Widget that holds a list of other User Widgets and displays the last widget in the list on the screen.</p>
         <p>The Push Widget function pushes the given User Widget to the top of the stack and displays it to the screen. The Pop Widget function deletes the widget at the top of the stack and displays whatever widget is now at the top of the stack.</p>
         <p>The advantage of this system is the ability to create nested menus that know nothing about eachother. This makes the code for opening another submenu and backing out of a menu very simple, as well as allowing the same menus to be reused in different contexts.</p>
@@ -99,7 +99,7 @@
       </details>
 
       <details open>
-        <summary><h2>Source Control</h2></summary>
+        <summary class="collapsible-header"><h2>Source Control</h2></summary>
         <p>We used a standard GitHub repository for source control.</p>
         <p>We decided not the use Github LFS since our files were not very large and we heard it was difficult to use.</p>
         <p>Unreal stores Blueprints as binary files so files could not be merged. As a result, the tech team had to communicate with each-other to ensure we were not working on the same files.</p>

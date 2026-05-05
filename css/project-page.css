@@ -225,7 +225,7 @@ summary::-webkit-details-marker {
 }
 
 /*  Add your own custom arrow using a pseudo-element */
-summary::before {
+.collapsible-header::before {
   content: '▶';
   scale: 70%;
   margin-right: 0.2rem;
@@ -233,7 +233,7 @@ summary::before {
 }
 
 /*Rotate the arrow when the details are open */
-details[open] summary::before {
+details[open] .collapsible-header::before {
   transform: rotate(90deg);
 }
 
