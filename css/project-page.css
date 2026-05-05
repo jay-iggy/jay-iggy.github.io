@@ -257,3 +257,33 @@ details[open]::details-content {
   opacity: 1;
 }
 
+pre {
+  margin: 0;
+}
+
+pre > code {
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin: 0;
+  margin-top: -35px;
+}
+
+.accordion{
+  max-width: 100%;
+  margin-right: 15px;
+}
+.accordion > details {}
+
+.accordion > details > summary {
+  background: var(--brightblue);
+  height: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  transition: 0.2s ease;
+}
+.accordion > details[open] > summary {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+

@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../css/project-page.css">
   <meta name="description" content="">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
@@ -49,6 +51,31 @@
             Github Repo
           </a>
         </p>
+
+        <div class="accordion">
+          <details>
+            <summary><h2>ExamplePawn.cs</h2></summary>
+            <pre>
+              <code class="language-csharp">
+      // Handle input
+      protected override void OnActionPressed(InputAction.CallbackContext context) {
+          if (!isPawnInputEnabled) return;
+
+          // Move
+          if (context.action.name == PawnAction.Move) _moveInput = context.ReadValue<Vector2>();
+
+          // Jump
+          if (context.action.name == PawnAction.ButtonA) {
+              if (!_isGrounded) return;
+
+              _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpForce, _rigidbody.velocity.z);
+              _isGrounded = false;
+          }
+      }
+              </code>
+            </pre>
+          </details>
+        </div>
       </details>
 
 
@@ -63,5 +90,7 @@
       </details>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>
 </html>
