@@ -62,7 +62,7 @@
           if (!isPawnInputEnabled) return;
 
           // Move
-          if (context.action.name == PawnAction.Move) _moveInput = context.ReadValue<Vector2>();
+          if (context.action.name == PawnAction.Move) _moveInput = context.ReadValue&lt;Vector2&gt;();
 
           // Jump
           if (context.action.name == PawnAction.ButtonA) {
