@@ -78,6 +78,8 @@ html {
   line-height: 1.4;
 
   scroll-padding-top: 75px; /* Matches your header height */
+
+  scrollbar-color: var(--brightblue) var(--darkblue);
 }
 
 /*
