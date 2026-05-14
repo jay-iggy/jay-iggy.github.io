@@ -57,6 +57,10 @@
   details > summary > h2 {
     font-size: 115%;
   }
+
+  pre > code {
+    font-size: 70%;
+  }
 }
 
 .project-title-img {
@@ -141,16 +145,23 @@ iframe {
   min-width: 250px;
   padding-bottom: 10px;
 }
+
 .wrapped-container > p {
   padding-left: 1rem;
   font-size: 115%;
-
 }
 
 .wrapped-image {
   float: right;
   margin-left: 30px; /* Space between image and text */
   margin-bottom: 10px;
+  max-width: 100%;
+}
+.wrapped-image-left {
+  float: left;
+  margin-right: 30px; /* Space between image and text */
+  margin-bottom: 10px;
+  max-width: 100%;
 }
 
 .grid {
@@ -274,12 +285,10 @@ pre > code {
   border-top-right-radius: 0px;
   margin: 0;
   margin-top: -35px;
+  max-width: 100%;
+  margin-bottom: -35px;
 }
 
-.accordion{
-  max-width: 100%;
-  margin-right: 15px;
-}
 .accordion > details {}
 
 .accordion > details > summary {

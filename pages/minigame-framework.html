@@ -43,6 +43,8 @@
     <div class="container-fluid">
       <p>This is a Unity Project framework that allows for a unique game jam that I founded while Vice President of the WPI IGDA chapter. This framework serves to connect several multiplayer minigames created independently by different developers and allows for all entries to the jam to be combined into a single executable.  </p>
       <iframe frameborder="0" src="https://itch.io/embed/4024097?bg_color=4a4863&amp;fg_color=ffffff&amp;link_color=ff3a62&amp;border_color=555172" width="552" height="167"><a href="https://igda-wpi.itch.io/wpi-igda-party">WPI IGDA Party by WPI IGDA</a></iframe>
+
+
       <details open id="framework">
         <summary class="collapsible-header"><h2>Framework</h2></summary>
         <p>
@@ -51,32 +53,83 @@
             Github Repo
           </a>
         </p>
+      </details>
 
+      <details open>
+        <summary class="collapsible-header"><h2>Multiplayer Input System</h2></summary>
+        <p>
+        <p>For handling multiplayer input we start with Player Input and Player Input Manager scripts from Unity's Input System package. When a controller is connected, the Player Input Manager will instantiate an instance of a provided Player Input prefab connected to that controller. Our player controller script can then subscribe to input events stored on the Player Input component.</p>
+        <div class="wrapped-container">
+          <img class="wrapped-image" src="../assets/minigame-framework/content/player-input-prefab.png"/>
+          <p>Typically, the Player Input prefab that we provide will be the entire player character object and that object will be destroyed when you leave the scene and recreated in the next. However, we need our input to maintain player slots across scenes and connect to the unique player characters of each scene.   </p>
+          <p>We solve these problems by having the Player Input objects be separated from the characters the players control. The prefab we provide is effectively an empty placeholder that contains only the components required for collecting input and interacting with menus that has been marked <code>DontDestroyOnLoad</code>. These objects are then tied to Player data objects on the overarching MinigameManager singleton to be bound to later.</p>
+        </div>
+
+        <p>Now it's time to talk about our Pawn class. Player characters in minigames derive from the class in order to receive input.</p>
+        <p>The following function call binds the Pawns input functions to the Player Input objects maintained by the framework.</p>
+        <img src="../assets/minigame-framework/content/bind-pawn.png"/>
+        <p>The provided Pawn Manager class binds input given a list of Pawns.</p>
+        <img src="../assets/minigame-framework/content/pawn-manager.png"/>
+
+        <p>In order to subscribe to the Player Inputs C# events, we can't subscribe to individual functions, we instead have to subscribe to a generic event that triggers whenever any input is pressed.</p>
         <div class="accordion">
-          <details>
+          <details open>
+            <summary><h2>Binding Pawn to Player Input</h2></summary>
+            <pre>
+              <code class="language-csharp">
+/// &lt;summary&gt;
+/// Bind a pawn to a PlayerInput. This will bind the pawn's OnActionPressed and OnActionReleased methods to the PlayerInput's action map.
+/// &lt;/summary&gt;
+/// &lt;param name="playerIndex"&gt;The index of the player to bind to this pawn.&lt;/param&gt;
+///  &lt;param name="pawn"&gt;The pawn to bind.  &lt;/param&gt;
+public static void BindPlayerInputToPawn(int playerIndex, Pawn pawn) {
+  if (playerIndex < 0 || playerIndex >= PlayerManager.players.Count) {
+      string message = $"Failed to bind pawn {pawn.name}, player index {playerIndex} is out of range (0-{PlayerManager.players.Count}).";
+      throw new Exception(message);
+  }
+
+  PlayerInput playerInput = PlayerManager.players[playerIndex].playerInput;
+
+  playerInput.onActionTriggered += pawn.HandleInput;
+  playerInput.onActionTriggered += HandlePauseButton;
+
+  // Add to list of bound pawns so that it can later be unbound
+  pawn.playerIndex = playerIndex;
+  _boundPawns.Add(pawn);
+}
+              </code>
+            </pre>
+          </details>
+        </div>
+
+        <p>The code below shows an example of how to get input using a Pawn. The Pawn class has two functions that are executed whenever input is received: <code>OnActionPressed</code> and <code>OnActionReleased</code>. To determine which button was pressed, we need to evaluate the name string of the <code>context</code> parameter.</p>
+        <div class="accordion">
+          <details open>
             <summary><h2>Example Pawn Input</h2></summary>
             <pre>
               <code class="language-csharp">
-// Handle input
-protected override void OnActionPressed(InputAction.CallbackContext context) {
-    if (!isPawnInputEnabled) return;
-
-    // Move
-    if (context.action.name == PawnAction.Move) _moveInput = context.ReadValue&lt;Vector2&gt;();
-
-    // Jump
-    if (context.action.name == PawnAction.ButtonA) {
-        if (!_isGrounded) return;
-
-        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpForce, _rigidbody.velocity.z);
-        _isGrounded = false;
+public class ExamplePawn : Pawn {
+    // Variables
+    Vector2 moveInput = Vector2.zero;
+    // Handle input
+    protected override void OnActionPressed(InputAction.CallbackContext context) {
+        if (context.action.name == PawnAction.Move) {
+            moveInput = context.ReadValue&lt;Vector2&gt;();
+            // Handle movement in Update
+        }
+        if (context.action.name == PawnAction.ButtonA) {
+            // Jump
+        }
     }
 }
               </code>
             </pre>
           </details>
         </div>
+        <p>To improve usability when comparing against the string values, we have provided a static class named PawnAction which contains constant string variables for each possible action.  </p>
       </details>
+
+
 
 
       <details open id="documentation">
