@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/project-page.css">
+  <link rel="stylesheet" href="../css/navmenu.css">
   <meta name="description" content="">
 
   <meta property="og:title" content="">
@@ -20,6 +21,7 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
 </head>
 <body>
   <header class="nav-bar">
@@ -31,7 +33,7 @@
     </nav>
   </header>
 
-  <div>
+  <div class="flex-root">
     <div class="bkg-image">
       <img src="../assets/hamster/hamster-bkg.PNG"  alt=""/>
     </div>
@@ -39,27 +41,54 @@
       <img alt="Hamster Ball Blitz! logo" class="project-title-img" src="/assets/hamster/hamster-title.png" width="300"/>
     </div>
     <div class="container-fluid">
-      <p>Hamster Ball Blitz! is a mobile physics-based action game published by MassDiGI. Knock your opponents out of the ring as you help Chester fight his way through the ranks of the Hamster Ball Wrestling League.</p>
-      <p>I worked with a team of 6 university students from the Boston area to develop Hamster Ball Blitz! over the course of the summer as part of MassDiGI's Summer Innovation Program internship.</p>
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/B9qtrcK0s9w?si=7yAAOfzNurnDkdLs&autoplay=1&mute=1&loop=1&playlist=B9qtrcK0s9w"
-          frameborder="0"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="store-link-container">
-        <a href="https://play.google.com/store/apps/details?id=com.MassDiGI.Leaf&hl=en_US" target="_blank">
-          <img src="../assets/store-badges/google-play.svg" alt="">
-        </a><a href="https://apps.apple.com/us/app/hamster-ball-blitz/id6504194684" target="_blank">
-          <img src="../assets/store-badges/ios-app-store.svg" alt="">
-        </a>
-      </div>
 
-      <p><b>Art Team:</b> Liberty Henry, Corinne Doucette<br>
-      <b>Tech Team:</b> Austin Hyatt, Justin Ignatowski, Rose Yang<br>
-        <b>Music and Audio:</b> Ben Zakharenko</p>
+
+
+
+
+      <!--
+      <div class="accordion">
+        <details open>
+          <summary><h2>Contributions</h2></summary>
+          <div class="button-container">
+            <a href="#core">
+              <button class="project-link">1. Programmed core systems</button>
+            </a>
+            <a href="#pipeline">
+              <button class="project-link">2. Created animation pipeline</button>
+            </a>
+            <a href="#fx">
+              <button class="project-link">3. Visual Effects</button>
+            </a>
+          </div>
+        </details>
+      </div>
+      -->
+
+
+
+
+
+      <details open>
+        <summary class="collapsible-header"><h2>About</h2></summary>
+        <p>Hamster Ball Blitz! is a mobile game published by MassDiGI. Knock your opponents out of the ring as you help Chester fight his way through the ranks of the Hamster Ball Wrestling League.</p>
+
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/B9qtrcK0s9w?si=7yAAOfzNurnDkdLs&autoplay=1&mute=1&loop=1&playlist=B9qtrcK0s9w"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="store-link-container">
+          <a href="https://play.google.com/store/apps/details?id=com.MassDiGI.Leaf&hl=en_US" target="_blank">
+            <img src="../assets/store-badges/google-play.svg" alt="">
+          </a><a href="https://apps.apple.com/us/app/hamster-ball-blitz/id6504194684" target="_blank">
+            <img src="../assets/store-badges/ios-app-store.svg" alt="">
+          </a>
+        </div>
+      </details>
 
       <details open id="core">
         <summary class="collapsible-header"><h2>Core Systems</h2></summary>

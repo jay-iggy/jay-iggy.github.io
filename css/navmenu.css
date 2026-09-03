@@ -1,0 +1,76 @@
+﻿:root{
+  /*COLOR PALETTE*/
+  --darkblue: #0d0826;
+  --medblue: #171038;
+  --linkcolor:#ff0076;
+  --babyblue:#abb2ce;
+  --brightblue:#241d5e;
+  /* -------------------- */
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+
+  margin-top: auto;
+}
+
+button.project-link  {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: var(--babyblue);
+  background-color: transparent;
+  border: 1px solid var(--babyblue);
+  border-bottom: 0;
+  padding: 10px;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+
+  transition: background-color 0.4s ease;
+}
+button.project-link:hover{
+  background-color: var(--linkcolor);
+  color: white;
+  cursor: pointer;
+}
+.button-container > :first-child > button {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.button-container > :last-child > button {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid var(--babyblue);
+}
+.button-header {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: var(--babyblue);
+  background-color: var(--brightblue);
+  border-bottom: 0;
+  padding: 10px;
+  border-radius: 0;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+
+
+
+.navmenu-container {
+  max-width: 400px;
+  width: 100%;
+}
+.accordion details > .button-container {
+  padding: 0;
+}
+.accordion details > .button-container > :first-child > button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
