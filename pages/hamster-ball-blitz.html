@@ -22,6 +22,13 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
 
+  <style>
+    :root {
+      --highlight: #ffc400;
+      --highlight2: #ea00cc;
+    }
+  </style>
+
 </head>
 <body>
   <header class="nav-bar">
@@ -40,38 +47,33 @@
     <div class="centered">
       <img alt="Hamster Ball Blitz! logo" class="project-title-img" src="/assets/hamster/hamster-title.png" width="300"/>
     </div>
-    <div class="container-fluid">
 
+    <div style="max-width: 90vw; margin: auto;">
+      <div class="horizontal">
+          <div class="container-fluid" style="align-items: flex-start;">
+            <p>
+              <hlt>Role: </hlt> Lead Programmer
+              <br>
+              <hlt>Platform: </hlt>Mobile Game (iOS, Android)
+              <br>
+              <hlt>Team Size: </hlt>6
+              <br>
+              <hlt>Duration: </hlt>2 months
+              <br>
+              <hlt>Achievements: </hlt>Featured at <b>PAX East 2025</b> and <b>2026</b>
+              <br>
+              <hlt>Language: </hlt>C#, Unity Shader Graph
+              <br>
+              <hlt>Software: </hlt>Unity, Plastic SCM, Miro
+            </p>
 
+            <div class="store-link-container" style="flex-wrap: nowrap; align-self: center; align-items: flex-start;column-gap: 10px;">
+              <img src="../assets/tools/unity.svg" alt="">
+              <img src="../assets/tools/c-sharp.svg" alt="">
+              <img src="../assets/tools/plastic-scm.svg" alt="">
+            </div>
+        </div>
 
-
-
-      <!--
-      <div class="accordion">
-        <details open>
-          <summary><h2>Contributions</h2></summary>
-          <div class="button-container">
-            <a href="#core">
-              <button class="project-link">1. Programmed core systems</button>
-            </a>
-            <a href="#pipeline">
-              <button class="project-link">2. Created animation pipeline</button>
-            </a>
-            <a href="#fx">
-              <button class="project-link">3. Visual Effects</button>
-            </a>
-          </div>
-        </details>
-      </div>
-      -->
-
-
-
-
-
-      <details open>
-        <summary class="collapsible-header"><h2>About</h2></summary>
-        <p>Hamster Ball Blitz! is a mobile game published by MassDiGI. Knock your opponents out of the ring as you help Chester fight his way through the ranks of the Hamster Ball Wrestling League.</p>
 
         <div class="video-container">
           <iframe
@@ -81,61 +83,108 @@
             allowfullscreen>
           </iframe>
         </div>
-        <div class="store-link-container">
-          <a href="https://play.google.com/store/apps/details?id=com.MassDiGI.Leaf&hl=en_US" target="_blank">
-            <img src="../assets/store-badges/google-play.svg" alt="">
-          </a><a href="https://apps.apple.com/us/app/hamster-ball-blitz/id6504194684" target="_blank">
-            <img src="../assets/store-badges/ios-app-store.svg" alt="">
-          </a>
-        </div>
-      </details>
+      </div>
 
-      <details open id="core">
-        <summary class="collapsible-header"><h2>Core Systems</h2></summary>
-        <p>As the team's lead programmer, I developed many of the game's core combat features, including: player movement, knocking an enemy out of the arena, teetering, winning a match, player abilities, and boss abilities.</p>
-        <p>I focused very closely on developing the game's unique movement system. We wanted for the controls to feel frantic and to explore a unique control scheme only possible in a mobile game.</p>
-
-        <img src="../assets/hamster/gif/hamster-01.gif" alt="">
-        <p>Each swipe applies a small force to the player in a direction, so the player must swipe frantically in order to move. Enemies and the environment also add forces to the player, so the player must learn to control their momentum to harness the game's movement.</p>
-
-
-        <div class="wrapped-container">
-          <img class="wrapped-image" src="../assets/hamster/gif/hamster-02.gif" alt="">
-          <p>One of the unique aspects of Hamster Ball Blitz's combat is the edge of the stage. When a hamster would fall out of the arena at a low speed, they instead teeter on the edge. While teetering, the player can tap rapidly to save themself from falling. If a teetering hamster is hit by their opponent, they will be knocked out. This is a feature that I programmed.</p>
+      <div class="horizontal">
+        <div class="container-fluid" style="align-items: flex-start; max-width: 35vw; margin: auto; ">
+          <p>
+            <hlt>Contributions: </hlt>
+            <br>- Animation pipeline
+            <br>- Visual Effects
+          </p>
         </div>
 
 
-        <p>The final opponent of each tournament wields a powerful ability. I programmed the boss ability system and several of the boss abilities.
-          I created visual effects that add extra flair to these special powers.</p>
+        <div class="container-fluid" style="max-width: 35vw; margin: auto;">
+          <summary class="collapsible-header">About</summary>
+          <p><hlt2>Hamster Ball Blitz!</hlt2> is a mobile game published by <hlt2>MassDiGI</hlt2>. Knock your opponents out of the ring as you help Chester fight his way through the ranks of the Hamster Ball Wrestling League.</p>
+
+        </div>
+      </div>
+
+
+
+      <div class="container-fluid">
+
+
         <div class="horizontal">
-          <img src="../assets/hamster/gif/hamster-03.gif" alt="">
-          <img src="../assets/hamster/gif/hamster-04.gif" alt="">
         </div>
-      </details>
-      <details open id="pipeline">
-        <summary class="collapsible-header">
-          <h2>Animation Pipeline</h2>
-        </summary>
 
-        <p>Each hamster in the game has distinct sprites and animations. I created a system and animation import pipelines to allow for using different sprite sheets for the same animations. </p>
-        <img src="../assets/hamster/gif/hamster-05.gif" alt="">
-      </details>
 
-      <details open id="fx">
-        <summary class="collapsible-header">
-          <h2>Visual Effects</h2>
-        </summary>
-        <p>One of my primary focuses during development was on juicing up the game feel as much as possible. There were a large number of visual effects and animations that I programmed to make the combat feel very responsive and the UI and camerawork feel very lively and expressive.</p>
-
-        <div class="grid">
-          <img src="../assets/hamster/gif/hamster-06.gif" alt="">
-          <img src="../assets/hamster/gif/hamster-07.gif" alt="">
-          <img src="../assets/hamster/gif/hamster-08.gif" alt="">
-          <img src="../assets/hamster/gif/hamster-09.gif" alt="">
-          <img src="../assets/hamster/gif/hamster-10.gif" alt="">
-          <img src="../assets/hamster/gif/hamster-11.gif" alt="">
+        <!--
+        <div class="accordion">
+          <details open>
+            <summary><h2>Contributions</h2></summary>
+            <div class="button-container">
+              <a href="#core">
+                <button class="project-link">1. Programmed core systems</button>
+              </a>
+              <a href="#pipeline">
+                <button class="project-link">2. Created animation pipeline</button>
+              </a>
+              <a href="#fx">
+                <button class="project-link">3. Visual Effects</button>
+              </a>
+            </div>
+          </details>
         </div>
-      </details>
+        -->
+
+
+
+
+
+
+        <details open id="core">
+          <summary class="collapsible-header">Core Systems</summary>
+          <p>As the team's lead programmer, <hlt2>I developed many of the game's core combat features</hlt2>, including: <i><b>player movement</b>, <b>knocking an enemy out of the arena</b>, <b>teetering</b>, <b>winning a match</b>, <b>player abilities</b>, and <b>boss abilities</b></i>.</p>
+          <p>I focused very closely on developing the game's unique movement system. <hlt2>We wanted for the controls to feel frantic</hlt2> and to <hlt2>explore a unique control scheme only possible in a mobile game.</hlt2></p>
+
+          <img src="../assets/hamster/gif/hamster-01.gif" alt="">
+          <p>Each swipe applies a small force to the player in a direction, so the player must swipe frantically in order to move. Enemies and the environment also add forces to the player, so the <b>player must learn to control their momentum to harness the game's movement</b>.</p>
+
+
+          <div class="wrapped-container">
+            <img class="wrapped-image" src="../assets/hamster/gif/hamster-02.gif" alt="">
+            <p>One of the unique aspects of Hamster Ball Blitz's combat is the edge of the stage. When a hamster would fall out of the arena at a low speed, they instead teeter on the edge. While teetering, the player can tap rapidly to save themself from falling. If a teetering hamster is hit by their opponent, they will be knocked out. This is a feature that I programmed.</p>
+          </div>
+
+
+          <p>The final opponent of each tournament wields a powerful ability. I programmed the boss ability system and several of the boss abilities.
+            I created visual effects that add extra flair to these special powers.</p>
+          <div class="horizontal">
+            <img src="../assets/hamster/gif/hamster-03.gif" alt="">
+            <img src="../assets/hamster/gif/hamster-04.gif" alt="">
+          </div>
+        </details>
+        <details open id="pipeline">
+          <summary class="collapsible-header">
+            Animation Pipeline
+          </summary>
+
+          <p>Each hamster in the game has distinct sprites and animations. I created a system and animation import pipelines to allow for using different sprite sheets for the same animations. </p>
+          <img src="../assets/hamster/gif/hamster-05.gif" alt="">
+        </details>
+
+        <details open id="fx">
+          <summary class="collapsible-header">
+            Visual Effects
+          </summary>
+          <p>One of my primary focuses during development was on juicing up the game feel as much as possible. There were a large number of visual effects and animations that I programmed to make the combat feel very responsive and the UI and camerawork feel very lively and expressive.</p>
+
+          <div class="grid">
+            <img src="../assets/hamster/gif/hamster-06.gif" alt="">
+            <img src="../assets/hamster/gif/hamster-07.gif" alt="">
+            <img src="../assets/hamster/gif/hamster-08.gif" alt="">
+            <img src="../assets/hamster/gif/hamster-09.gif" alt="">
+            <img src="../assets/hamster/gif/hamster-10.gif" alt="">
+            <img src="../assets/hamster/gif/hamster-11.gif" alt="">
+          </div>
+        </details>
+    </div>
+
+
+
 
 
 

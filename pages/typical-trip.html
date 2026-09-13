@@ -20,7 +20,15 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
+  <style>
+    :root {
+      --highlight2: #ffc400;
+      --highlight: #5ffc82;
+    }
+  </style>
 </head>
+
 <body>
   <header class="nav-bar">
     JAY IGGY
@@ -36,39 +44,83 @@
       <img src="../assets/typical-trip/typical-trip-bkg.png" alt="">
     </div>
     <div class="centered">
-      <img alt="Typical Trip logo" class="project-title-img" src="/assets/typical-trip/typical-trip-title.png" width="300"/>
+      <img alt="Typical Trip logo" class="project-title-img" src="/assets/typical-trip/typical-trip-title.png" width="200"/>
 
     </div>
-    <div class="container-fluid">
-      <p>Typical Trip is a surreal 3D sandbox adventure game. Your TV remote is out of batteries. Wander around a bizarre town and get lost in a maze of side quests as you embark on a perilous journey to sit on the couch all day.</p>
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/pksSs8PoZm4?si=q2B_2nvmCgxLen1m&autoplay=1&mute=1&loop=1&playlist=pksSs8PoZm4"
-          frameborder="0"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+
+
+    <div style="max-width: 90vw; margin: auto;">
+      <div class="horizontal">
+          <div class="container-fluid" style="align-items: flex-start;">
+            <p>
+              <hlt>Role: </hlt> Lead Programmer
+              <br>
+              <hlt>Platform: </hlt>Windows
+              <br>
+              <hlt>Team Size: </hlt>4
+              <br>
+              <hlt>Duration: </hlt>2 months
+              <br>
+              <hlt>Language: </hlt>C#, Unity Shader Graph
+              <br>
+              <hlt>Software: </hlt>Unity, Github
+            </p>
+
+            <div class="store-link-container" style="flex-wrap: nowrap; align-self: center; align-items: flex-start;column-gap: 10px;">
+              <img src="../assets/tools/unity.svg" alt="">
+              <img src="../assets/tools/c-sharp.svg" alt="">
+              <img src="../assets/tools/github.svg" alt="">
+            </div>
+          </div>
+
+
+
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/pksSs8PoZm4?si=q2B_2nvmCgxLen1m&autoplay=1&mute=1&loop=1&playlist=pksSs8PoZm4"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
-      <iframe frameborder="0" src="https://itch.io/embed/2355730?border_width=0&amp;bg_color=cb0ced&amp;fg_color=ffd133&amp;link_color=00fd83&amp;border_color=f738ff" width="550" height="165"><a href="https://cu5tin.itch.io/typical-trip">Typical Trip by Jay Iggy, EggSucker888, ThoughtlessPerspective, ChaoticDragons</a></iframe>
 
-      <p><b>3D Character Art:</b> Lauren Waddick<br>
-        <b>Writing and 2D Art:</b> Ben Skiba<br>
-      <b>Programming:</b> Jay Iggy and Toby Wilensky</p>
+      <div class="horizontal">
+        <div class="container-fluid" style="align-items: flex-start; max-width: 35vw; margin: auto; ">
+          <p>
+            <hlt>Contributions: </hlt>
+            <br>- Quest building tools
+            <br>- Modular minigame system
+          </p>
+        </div>
 
 
-      <details open id="quest-tools">
-        <summary class="collapsible-header"><h2>Quest Building Tools</h2></summary>
-        <p>The gameplay of Typical Trip involves a large number of small interactions. As a result. one of my goals for this project was to create tools to streamline the creation process of gameplay content.</p>
-        <p>The dev vision for quest creation was to be able to script out quests entirely within a scene without the need for creating a custom script for each quest. The system would provide an overarching manager script and small logic block components with conditions for progressing to the next step in a quest.</p>
-        <p>Each quest would have a root object with a Quest Manager script that holds a list of Quest Nodes. With just this basic structure each Quest Node can then be responsible for handling its own progression. Quest Nodes may progress from dialogue, completing a minigame, or by giving a particular item to a character.</p>
-      </details>
-      <details open id="minigames">
-        <summary class="collapsible-header"><h2>Modular Minigame System</h2></summary>
-        <p>I wanted to create tools for the project's designers to be able to create bespoke minigames within the scene itself without needing to create custom scripts. Minigames would be constructed from provided components that perform basic functionality like invoke events when clicked or collided with, these components could then communicate with another object specially designed to hold variables for that minigame. The underlying logic of each minigame would be based on incrementing/decrementing integers and invoking events when those integers reached particular thresholds. </p>
-        <p>Each minigame is initiated by interacting with the minigame object, the camera than changes to a unique camera for that minigame, and the player input is changed to a cursor. I created a few basic cursor interaction objects such as clickable and draggable objects which all minigames could then derive from.</p>
-      </details>
+        <div class="container-fluid" style="max-width: 35vw; margin: auto;">
+          <summary class="collapsible-header">About</summary>
+          <p><hlt2>Typical Trip</hlt2> is a surreal 3D sandbox adventure game. Your TV remote is out of batteries. Wander around a bizarre town and get lost in a maze of side quests as you embark on a perilous journey to sit on the couch all day.</p>
+
+        </div>
+      </div>
+
+
+      <div class="container-fluid">
+
+        <iframe frameborder="0" src="https://itch.io/embed/2355730?border_width=0&amp;bg_color=cb0ced&amp;fg_color=ffd133&amp;link_color=00fd83&amp;border_color=f738ff" width="550" height="165"><a href="https://cu5tin.itch.io/typical-trip">Typical Trip by Jay Iggy, EggSucker888, ThoughtlessPerspective, ChaoticDragons</a></iframe>
+
+        <details open id="quest-tools">
+          <summary class="collapsible-header"><h2>Quest Building Tools</h2></summary>
+          <p>The gameplay of Typical Trip involves a large number of small interactions. As a result. one of my goals for this project was to create tools to streamline the creation process of gameplay content.</p>
+          <p>The dev vision for quest creation was to be able to script out quests entirely within a scene without the need for creating a custom script for each quest. The system would provide an overarching manager script and small logic block components with conditions for progressing to the next step in a quest.</p>
+          <p>Each quest would have a root object with a Quest Manager script that holds a list of Quest Nodes. With just this basic structure each Quest Node can then be responsible for handling its own progression. Quest Nodes may progress from dialogue, completing a minigame, or by giving a particular item to a character.</p>
+        </details>
+        <details open id="minigames">
+          <summary class="collapsible-header"><h2>Modular Minigame System</h2></summary>
+          <p>I wanted to create tools for the project's designers to be able to create bespoke minigames within the scene itself without needing to create custom scripts. Minigames would be constructed from provided components that perform basic functionality like invoke events when clicked or collided with, these components could then communicate with another object specially designed to hold variables for that minigame. The underlying logic of each minigame would be based on incrementing/decrementing integers and invoking events when those integers reached particular thresholds. </p>
+          <p>Each minigame is initiated by interacting with the minigame object, the camera than changes to a unique camera for that minigame, and the player input is changed to a cursor. I created a few basic cursor interaction objects such as clickable and draggable objects which all minigames could then derive from.</p>
+        </details>
+      </div>
+
     </div>
-
   </div>
 
 </body>

@@ -7,6 +7,8 @@
   --babybluedark:#878da3;
   --brightblue:#241d5e;
   --titlebarcolor: rgb(36 29 94 /.8);
+  --highlight: #ff0076;
+  --highlight2: #ff0076;
   /* -------------------- */
 
 }
@@ -29,7 +31,7 @@
 
   margin: 10px;
 
-  width: 60vw;
+
   height: fit-content;
   padding: 2rem;
 
@@ -50,29 +52,34 @@
 .summary-box {
   display: flex;
   flex-direction: row;
-  justify-self: center;
+  justify-self: left;
+  justify-items: left;
 
-  width: 100%;
+  width: fit-content;%;
   height: fit-content;
   padding: 2rem;
 
   border-radius: 20px;
   background-color: var(--darkblue);
   column-gap: 100px;
-
-
-
-
+}
+hlt{
+  color: var(--highlight);
+  font-weight: bold;
+}
+hlt2{
+  color: var(--highlight2);
+  font-weight: bold;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  line-height: .5;
+  line-height: 2;
   column-gap: 100px;
-
 }
+
 
 .line-header {
   font-size: 120%;
@@ -121,7 +128,7 @@
 
 }
 .bkg-image img {
-  filter: blur(10px);
+  filter: blur(15px);
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -273,6 +280,11 @@ details > img {
 /*  Remove the arrow for Safari specifically */
 summary::-webkit-details-marker {
   display: none;
+}
+
+.collapsible-header {
+  font-weight: bold;
+  font-size: 160%;
 }
 
 /*  Add your own custom arrow using a pseudo-element */
