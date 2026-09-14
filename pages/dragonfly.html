@@ -20,6 +20,13 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
+  <style>
+    :root {
+      --highlight: #ffc400;
+      --highlight2: #5ffc82;
+    }
+  </style>
 </head>
 <body>
   <header class="nav-bar">
@@ -38,13 +45,34 @@
     <div class="centered">
       <img alt="Dragonfly logo" class="project-title-img" src="/assets/dragonfly-title.png" width="300"/>
     </div>
-    <div class="container-fluid">
-      <p>Dragonfly is an ASCII graphics game engine programmed in C++. I programmed all engine features from scratch and then created an arcade style game using the engine. </p>
-      <details open id="dragonfly">
-        <summary class="collapsible-header"><h2>Programming the Game Engine</h2></summary>
-      </details>
-      <details open id="feed-the-baby">
-        <summary class="collapsible-header"><h2>Feed the Baby</h2></summary>
+
+    <div style="max-width: 90vw; margin: auto;">
+      <div class="horizontal">
+        <div class="container-fluid" style="align-items: flex-start;">
+          <p>
+            <hlt>Role: </hlt> Engine Developer
+            <br>
+            <hlt>Platform: </hlt>Windows
+            <br>
+            <hlt>Team Size: </hlt>1
+            <br>
+            <hlt>Duration: </hlt>2 months
+            <br>
+            <hlt>Language: </hlt>C++
+            <br>
+            <hlt>Software: </hlt>Visual Studio, GitHub
+            <br>
+            <hlt>Libraries: </hlt> SFML
+          </p>
+
+          <div class="store-link-container" style="flex-wrap: nowrap; align-self: center; align-items: flex-start;column-gap: 10px;">
+            <img src="../assets/tools/c-plus-plus.svg" alt="">
+            <img src="../assets/tools/github.svg" alt="">
+          </div>
+        </div>
+
+
+
         <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/CNDSb1y3zw0?si=Uv9y4MgFTQhExyMA&autoplay=1&mute=1&loop=1&playlist=CNDSb1y3zw0"
@@ -53,6 +81,33 @@
             allowfullscreen>
           </iframe>
         </div>
+      </div>
+
+      <div class="horizontal">
+        <div class="container-fluid" style="align-items: flex-start; max-width: 600px;">
+          <p>
+            <hlt>Contributions: </hlt>
+            <br>- Created <b>Dragonfly</b> game engine
+            <br>- Developed <hlt2>Feed the Baby</hlt2> using the Dragonfly engine
+          </p>
+        </div>
+
+
+        <div class="container-fluid" style="max-width: 600px;">
+          <div class="collapsible-header">About</div>
+          <p><hlt2>Dragonfly</hlt2> is an ASCII graphics game engine programmed in C++. I programmed <hlt>all engine features</hlt> from scratch and then <hlt>created an arcade style game</hlt> using the engine.</p>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <details open id="dragonfly">
+        <summary class="collapsible-header">Programming the Game Engine</summary>
+      </details>
+      <details open id="feed-the-baby">
+        <summary class="collapsible-header">Feed the Baby</summary>
         <iframe frameborder="0" src="https://itch.io/embed/2679652?bg_color=000000&amp;fg_color=c9c300&amp;link_color=ed0000&amp;border_color=333333" width="552" height="167"><a href="https://cu5tin.itch.io/feed-the-baby">Feed the Baby by Jay Iggy, EggSucker888</a></iframe>
       </details>
     </div>

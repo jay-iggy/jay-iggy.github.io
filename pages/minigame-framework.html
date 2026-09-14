@@ -50,7 +50,7 @@
 
     <div style="max-width: 90vw; margin: auto;">
       <div class="horizontal">
-          <div class="container-fluid" style="align-items: flex-start;">
+          <div class="container-fluid" style="align-items: flex-start; ">
             <p>
               <hlt>Role: </hlt> Solo Framework Developer
               <br>
@@ -69,45 +69,55 @@
             </div>
           </div>
 
-
-        <iframe frameborder="0" src="https://itch.io/embed/4024097?bg_color=4a4863&amp;fg_color=ffffff&amp;link_color=ff3a62&amp;border_color=555172" width="552" height="167"><a href="https://igda-wpi.itch.io/wpi-igda-party">WPI IGDA Party by WPI IGDA</a></iframe>
-
-      </div>
-
-      <div class="horizontal">
-        <div class="container-fluid" style="align-items: flex-start; max-width: 35vw; margin: auto; ">
+        <div class="container-fluid" style="align-items: flex-start; max-width: 700px; ">
           <p>
             <hlt>Contributions: </hlt>
             <br> - Created and maintained framework
             <br> - Samples and Documentation
           </p>
         </div>
-
-
-        <div class="container-fluid" style="max-width: 35vw; margin: auto;">
-          <summary class="collapsible-header">About</summary>
-          <p>This is a Unity Project framework that allows for a <hlt2>unique game jam</hlt2> that I founded while Vice President of the WPI IGDA chapter. This framework serves to <hlt2>connect several multiplayer minigames created independently by different developers</hlt2> and allows for all entries to the jam to be combined into a <hlt2>single executable.</hlt2> </p>
-
-        </div>
       </div>
 
+      <div class="horizontal">
+        <div class="container-fluid" style="max-width: 700px;">
+          <summary class="collapsible-header">About</summary>
+          <p>This is a Unity Project framework that allows for a <hlt2>unique game jam</hlt2> that I founded while Vice President of the WPI IGDA chapter. This framework serves to <hlt2>connect several multiplayer minigames created independently by different developers</hlt2> and allows for all entries to the jam to be combined into a <hlt2>single executable.</hlt2> </p>
+        </div>
 
-      <div class="container-fluid">
         <iframe frameborder="0" src="https://itch.io/embed/4024097?bg_color=4a4863&amp;fg_color=ffffff&amp;link_color=ff3a62&amp;border_color=555172" width="552" height="167"><a href="https://igda-wpi.itch.io/wpi-igda-party">WPI IGDA Party by WPI IGDA</a></iframe>
+      </div>
 
-
-        <details open id="framework">
-          <summary class="collapsible-header"><h2>Framework</h2></summary>
+      <div class="horizontal">
+        <div class="container-fluid" id="framework" style="max-width: 600px;">
+          <div class="collapsible-header">Framework</div>
           <p>
             The framework is developed and distributed through the following
             <a href="https://github.com/jay-iggy/MinigameJamFramework" target="_blank">
               Github Repo
             </a>
           </p>
-        </details>
+
+        </div>
+        <div class="container-fluid" id="documentation" style="max-width: 600px;">
+
+        <div class="collapsible-header">Samples and Documentation</div>
+        <p>
+          Instructions for creating a minigame for the collection can be found in the
+          <a href="https://docs.google.com/document/d/1t7A7M-wwTv02umcZk_as4Ys-McbW0ucQ4ZoooDDnxKY/edit?usp=sharing" target="_blank">
+            User Guide
+          </a>
+        </p>
+        </div>
+
+
+      </div>
+
+
+      <div class="container-fluid">
+
 
         <details open>
-          <summary class="collapsible-header"><h2>Multiplayer Input System</h2></summary>
+          <summary class="collapsible-header">Multiplayer Input System</summary>
           <p>
           <p>For handling multiplayer input we start with Player Input and Player Input Manager scripts from Unity's Input System package. When a controller is connected, the Player Input Manager will instantiate an instance of a provided Player Input prefab connected to that controller. Our player controller script can then subscribe to input events stored on the Player Input component.</p>
           <div class="wrapped-container">
@@ -182,7 +192,7 @@
 
 
         <details open>
-          <summary class="collapsible-header"><h2>Minigame Management</h2></summary>
+          <summary class="collapsible-header">Minigame Management</summary>
           <p></p>
           <div class="wrapped-container">
             <img class="wrapped-image" src="../assets/minigame-framework/content/minigame-info.png" alt=""/>
@@ -190,16 +200,6 @@
 
           <img src="../assets/minigame-framework/content/minigame-description.png" alt="" width="600"/>
           <img src="../assets/minigame-framework/content/minigame-pack.png" alt=""/>
-        </details>
-
-        <details open id="documentation">
-          <summary class="collapsible-header"><h2>Samples and Documentation</h2></summary>
-          <p>
-            Instructions for creating a minigame for the collection can be found in the
-            <a href="https://docs.google.com/document/d/1t7A7M-wwTv02umcZk_as4Ys-McbW0ucQ4ZoooDDnxKY/edit?usp=sharing" target="_blank">
-              User Guide
-            </a>
-          </p>
         </details>
       </div>
     </div>
