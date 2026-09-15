@@ -96,7 +96,7 @@
   width: 100%;
   border-radius: 0;
 }
-.skills-container img:hover {
+.skill img:hover {
   scale: 110%;
   filter: brightness(120%);
 }.skill:hover {
@@ -113,7 +113,7 @@
     font-size: 90%;
   }
 
-  .skills-container img {
+  .skill img {
     height: 40px;
     width: 40px;
   }
