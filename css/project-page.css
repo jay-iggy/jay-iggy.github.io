@@ -63,14 +63,7 @@
   background-color: var(--darkblue);
   column-gap: 100px;
 }
-hlt{
-  color: var(--highlight);
-  font-weight: bold;
-}
-hlt2{
-  color: var(--highlight2);
-  font-weight: bold;
-}
+
 
 .column {
   display: flex;

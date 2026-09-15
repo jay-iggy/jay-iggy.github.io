@@ -49,6 +49,15 @@ button  {
   width: 8rem;
 }
 
+hlt{
+  color: var(--highlight);
+  font-weight: bold;
+}
+hlt2{
+  color: var(--highlight2);
+  font-weight: bold;
+}
+
 body {
   display: flex;
   flex-direction: column;
