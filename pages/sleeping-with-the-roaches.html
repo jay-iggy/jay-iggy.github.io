@@ -98,7 +98,7 @@
 
 
         <div class="container-fluid" style="max-width: 800px;">
-          <summary class="collapsible-header">About</summary>
+          <div class="collapsible-header">About</div>
           <p><hlt2>Sleeping with the Roaches</hlt2> is a two-player 3D puzzle platformer where two bugs, tied together with a spider web, must work together to escape the leader of the spider mafia. A wide-eyed young spider and an unlucky moth are trapped in a cluttered basement, and must use the spider silk that connects them and their own unique abilities to reach freedom.</p>
 
         </div>
@@ -115,13 +115,13 @@
         </a>
 
         <details open>
-          <summary class="collapsible-header"><h2>My Role on the Project</h2></summary>
+          <summary class="collapsible-header">My Role on the Project</summary>
           <p>As part of the 6-person development team, my responsibilities included: programming player characters, designing/implementing User Interface, programming the dialogue system, writing dialogue, and level design.</p>
           <p>I had the most previous experience with Unreal Engine, and as such, I helped the other members of the team through its quirks.</p>
         </details>
 
         <details open id="characters">
-          <summary class="collapsible-header"><h2>Characters</h2></summary>
+          <summary class="collapsible-header">Characters</summary>
           <p>Our main gameplay mechanic is a rope that tethers the two players together. However, Unreal's Character Movement component was incompatible with our tether mechanic and we had to create our own movement system from scratch.</p>
           <p>We also decided not to use Unreal's multiplayer options or implement controller support since one of the functions we relied on for our aiming system used the mouse position and we decided for both characters to be controlled on the same keyboard and mouse.</p>
           <p>Despite being a game featuring two characters, both are controlled by a single keyboard and mouse. In Unreal, I was unable to get two different Pawns to be controlled by the same input device. The solution was to create a single pawn we called InputHub that acted as a middleman and passed along the inputs from the user to the two characters.</p>
@@ -140,7 +140,7 @@
         </details>
 
         <details open id="dialogue">
-          <summary class="collapsible-header"><h2>Dialogue</h2></summary>
+          <summary class="collapsible-header">Dialogue</summary>
           <p>The core of the UI architecture is the Widget Stack class. This class is a User Widget that holds a list of other User Widgets and displays the last widget in the list on the screen.</p>
           <p>The Push Widget function pushes the given User Widget to the top of the stack and displays it to the screen. The Pop Widget function deletes the widget at the top of the stack and displays whatever widget is now at the top of the stack.</p>
           <p>The advantage of this system is the ability to create nested menus that know nothing about eachother. This makes the code for opening another submenu and backing out of a menu very simple, as well as allowing the same menus to be reused in different contexts.</p>
@@ -154,7 +154,7 @@
         </details>
 
         <details open>
-          <summary class="collapsible-header"><h2>Source Control</h2></summary>
+          <summary class="collapsible-header">Source Control</summary>
           <p>We used a standard GitHub repository for source control.</p>
           <p>Unreal stores Blueprints as binary files so files could not be merged. As a result, the tech team had to communicate with each-other to ensure we were not working on the same files.</p>
           <p>Early in development, we each worked on separate branches. However we would only merge our branches back into the primary branch when we were done working on a feature and for the entire time we were working on that feature other team members could not touch that file. Also, features were often dependent on lots of other features and by working on branches we often did not have access to the most up to date version of the other features. Later in development we all decided to work on the same branch since we would not be modifying the same files anyway. We also started to make much smaller commits. As a result, files became more available for edit more often and everyone had access the most up to date version of each feature at all tims.</p>
