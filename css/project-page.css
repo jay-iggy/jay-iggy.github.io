@@ -162,7 +162,7 @@ iframe {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   justify-self: center;
   column-gap: 30px;
   padding: 2rem;
