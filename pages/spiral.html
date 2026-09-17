@@ -66,7 +66,18 @@
             <img src="../assets/tools/github.svg" alt="">
           </div>
         </div>
+        <div class="video-container">
+          <video class="video-container" width="640" height="360" autoplay loop muted style="border-radius: 20px;">
+            <source src="../assets/spiral/gunther.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
+
+
+      </div>
+
+      <div class="horizontal">
         <div class="container-fluid" style="align-items: flex-start; max-width: 600px;">
           <p>
             <hlt>Contributions: </hlt>
@@ -74,27 +85,95 @@
             <br>- Created multiple boss enemies
           </p>
         </div>
-
-
-      </div>
-
-      <div class="horizontal">
         <div class="container-fluid" style="max-width: 600px;">
           <div class="collapsible-header">About</div>
           <p><hlt2>Spiral</hlt2> is a bullet hell boss rush game. A strange creature in an old lady's basement has been mutated by a wizard's spell. Face off against a continuously changing and evolving monster as you find yourself way in over your head.</p>
         </div>
-        <iframe frameborder="0" src="https://itch.io/embed/3067632?bg_color=1F1341&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=3a3253" width="552" height="167"><a href="https://spiral-devs.itch.io/spiral">SPIRAL by spiral-devs, SpencerDill232, H4C1M, Jay Iggy, EggSucker888</a></iframe>
-
       </div>
+
     </div>
 
 
     <div class="container-fluid">
+      <iframe frameborder="0" src="https://itch.io/embed/3067632?bg_color=1F1341&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=3a3253" width="552" height="167"><a href="https://spiral-devs.itch.io/spiral">SPIRAL by spiral-devs, SpencerDill232, H4C1M, Jay Iggy, EggSucker888</a></iframe>
       <details open id="gunther">
         <summary class="collapsible-header">Boss Implementation</summary>
         <p>I'd like the showcase my programming and animation process I utilized for some of the bosses I created for the game.</p>
         <p>Gunther is a giant shotgun that has come to life and crawls around like an inchworm while littering the arena with explosive shotgun shells.</p>
-        <p></p>
+        <h3>Animation Events</h3>
+        <p>Gunther is a fully animated character with extended animations choreographing his next move. To ensure that his and visual effects sync up with these animations, I utilized Unity's Animation Events to set flags during the animation sequence to execute a method at a specific time.  </p>
+
+        <div class="horizontal" style="column-gap: 20px;">
+          <div class="video-container" style="max-width: 600px;">
+            <video class="video-container" width="640" height="360" autoplay loop muted style="border-radius: 20px;">
+              <source src="../assets/spiral/GuntherShoot.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div><div class="video-container" style="max-width: 600px;">
+            <video class="video-container" width="640" height="360" autoplay loop muted style="border-radius: 20px;">
+              <source src="../assets/spiral/GuntherUnload.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <h3>Coroutine Based Behavior</h3>
+        <p>To manage logic control flow, the timing of animations, and tune the rate of intensity of Gunther's attacks, I wrote his behavior methods as Coroutines. </p>
+        <p>The below code snippet contains the full behavior code for the boss. Using Coroutines allows each method to control when it is finished executing, which allows the overall behavior controller to be represented in a simple and easy to understand format, allowing for the potential for better development of enemy behavior.</p>
+
+        <div class="accordion">
+          <details open>
+            <summary><h2>Gunther Behavior</h2></summary>
+            <pre>
+                <code class="language-csharp">
+  private IEnumerator ShotgunEnemyBehavior() {
+      print("ShotgunEnemyBehavior started");
+      while (true) {
+          yield return MoveToPoint(BossRoom.GetRandomPositionInRoom(5));
+          yield return Attack_Shoot();
+          yield return Attack_EjectShells();
+          yield return new WaitForSeconds(1);
+      }
+  }`
+                </code>
+              </pre>
+          </details>
+        </div>
+
+        <p>Each individual attack can control its own timing, which I utilize below in the Attack_Shoot logic by only allowing Gunther to fire a shot if he is rotated to face the player. Since Gunther fires two volleys before ejecting shells, this also allows him to rotate to face the player between volleys.</p>
+        <p>By allowing each enemy move to dictate its own timing in this way, the behavior controller script doesn't need to be muddied up by smaller interactions like this.</p>
+        <div class="accordion">
+            <details open>
+              <summary><h2>Coroutine Logic</h2></summary>
+              <pre>
+                  <code class="language-csharp">
+  private IEnumerator Attack_Shoot() {
+      for(int i = 0; i < volleysPerAttack; i++) {
+          _fired = false;
+          yield return RotateToFacePlayer();
+          if(!_fired) {
+              _animator.SetTrigger("Shoot");
+              yield return new WaitForSeconds(shootAnim.length + delayBetweenVolleys);
+          }
+      }
+  }
+  private IEnumerator RotateToFacePlayer() {
+    float timer=0;
+    while (Vector3.Angle(transform.forward, _player.transform.position - transform.position) > 10f){
+        Vector3 targetDir = _player.transform.position - transform.position;
+        float step = aimRotateSpeed * Time.deltaTime;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDir);
+        yield return null;
+    }
+    transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+}
+                </code>
+                </pre>
+            </details>
+          </div>
+
+
       </details>
     </div>
 
