@@ -1,0 +1,170 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jay Iggy | Tech Art</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/project-page.css">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="../assets/icon.jpg">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <style>
+    :root {
+      --highlight: #db6863;
+      --highlight2: #7897f8;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-bar">
+    JAY IGGY
+    <nav>
+      <a href="../" class="nav-link">HOME</a>
+      <a href="../pages/projects.html" class="nav-link">PROJECTS</a>
+      <a href="../assets/jay-iggy-resume.pdf" class="nav-link" target="_blank">RESUME</a>
+    </nav>
+  </header>
+
+  <div class="flex-root">
+    <div class="bkg-image">
+      <img src="../assets/minigame-framework/minigame-party-bkg.png" alt=""/>
+    </div>
+        <div class="container-fluid" style="max-width: 700px;">
+          <div class="collapsible-header">Tech Art Portfolio</div>
+          <p>Tech Art description</p>
+        </div>
+
+
+    <div class="container-fluid" style="max-width: 85vw;">
+      <details open>
+        <summary class="collapsible-header">Animation Import Pipeline</summary>
+
+        <div class="wrapped-container">
+          <div class="centered wrapped-image" style="max-width: 1000px; margin:auto">
+            <div class="video-container" style="max-width: 800px;">
+              <video class="video-container" width="1280" height="720" autoplay loop muted style="border-radius: 20px;">
+                <source src="../assets/tech-art/hamster-asset-pipeline.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="centered">Context Menu buttons automatically format spritesheet and setup Sprite Library Asset.</p>
+          </div>
+          <p>Each hamster in the Hamster Ball Blitz! has distinct sprites and animations. I created a system and animation import pipelines to allow for using different sprite sheets for the same animations.</p>
+          <p>I created a custom Context Menu button in the Editor that automatically divides a spritesheet into individual sprites and then adds each sprite to a Sprite Library.</p>
+          <p>Our character animations choose the corresponding frame in the Sprite Library to render.</p>
+          <p>These tools I created resulted in faster importation of animation spritesheets that allowed for faster iteration and a larger cast of characters.</p>
+        </div>
+        <div class="horizontal">
+          <div class="centered" style="max-width: 600px; margin:auto">
+            <img src="../assets/tech-art/hamster-sprite-library.png" alt="" style="max-width: 100%; margin:auto;">
+            <p class="centered">Sprite Library Asset</p>
+          </div>
+          <div class="centered" style="max-width: 600px; margin:auto">
+            <div class="video-container" style="max-width: 600px;">
+              <video class="video-container" width="800" height="450" autoplay loop muted style="border-radius: 20px;">
+                <source src="../assets/tech-art/hamster-run-anim.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="centered">Character Animations render corresponding sprite in Sprite Library.</p>
+          </div>
+        </div>
+
+        <p>This system allowed us to have unique sprite sheets for each character in the game while preserving clean code architecture. The most exciting usage of this feature was the game's final boss <b>Chunky Sandwich</b> who replaces the typical hamster ball animations entirely and rolls around the arena with his large body. </p>
+        <img src="../assets/hamster/gif/hamster-05.gif" alt="">
+
+
+      </details>
+    </div>
+
+
+      <div class="container-fluid" style="max-width: 85vw;">
+        <details open>
+          <summary class="collapsible-header">Minigame Framework Tools</summary>
+
+          <p>The code below shows an example of how to get input using a Pawn. The Pawn class has two functions that are executed whenever input is received: <code>OnActionPressed</code> and <code>OnActionReleased</code>. To determine which button was pressed, we need to evaluate the name string of the <code>context</code> parameter.</p>
+          <div class="accordion">
+            <details open>
+              <summary><h2>Example Pawn Input</h2></summary>
+              <pre>
+                <code class="language-csharp">
+  public class ExamplePawn : Pawn {
+      // Variables
+      Vector2 moveInput = Vector2.zero;
+      // Handle input
+      protected override void OnActionPressed(InputAction.CallbackContext context) {
+          if (context.action.name == PawnAction.Move) {
+              moveInput = context.ReadValue&lt;Vector2&gt;();
+              // Handle movement in Update
+          }
+          if (context.action.name == PawnAction.ButtonA) {
+              // Jump
+          }
+      }
+  }
+                </code>
+              </pre>
+            </details>
+          </div>
+          <p>To improve usability when comparing against the string values, we have provided a static class named PawnAction which contains constant string variables for each possible action.  </p>
+        </details>
+      </div>
+
+
+    <div class="container-fluid" style="max-width: 85vw;">
+        <details open>
+          <summary class="collapsible-header">2.5D Splitscreen Animation Rendering</summary>
+
+          <div class="centered" style="max-width: 800px; margin:auto">
+            <img src="../assets/tech-art/sugar-outfit-rendering.gif" alt="" style="max-width: 100%; margin:auto;">
+            <p class="centered">Sprite renders different front/back animations for each camera </p>
+          </div>
+        </details>
+    </div>
+
+    <div class="container-fluid" style="max-width: 85vw;">
+        <details open>
+          <summary class="collapsible-header">Design Analytics Tool</summary>
+
+          <div class="horizontal">
+            <div class="centered" style="max-width: 600px; margin:auto">
+              <img src="../assets/tech-art/spiral-editmenu.png" alt="" style="max-width: 100%; margin:auto;">
+              <p class="centered">Menu allows for quick editing of gameplay values for A/B testing and design iteration</p>
+            </div><div class="centered" style="max-width: 600px; margin:auto">
+              <img src="../assets/tech-art/spiral-excel.png" alt="" style="max-width: 100%; margin:auto;">
+              <p class="centered">Playest session data saved to Excel sheet for analysis</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+    <div class="container-fluid" style="max-width: 85vw;">
+      <details open>
+        <summary class="collapsible-header">WebGL Renderer</summary>
+        <div class="centered" style="max-width: 800px; margin:auto">
+          <img src="../assets/tech-art/webgl-renderer.gif" alt="" style="max-width: 100%; margin:auto;">
+          <p class="centered">Scene rendered from OBJ and MTL files</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+</html>

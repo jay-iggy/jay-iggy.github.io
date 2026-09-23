@@ -178,8 +178,43 @@
             Animation Pipeline
           </summary>
 
-          <p>Each hamster in the game has distinct sprites and animations. I created a system and animation import pipelines to allow for using different sprite sheets for the same animations. </p>
-          <p>This system allowed us to have unique sprite sheets for each character in the game. The most exciting usage of this feature was the game's final boss <b>Chunky Sandwich</b> who replaces the typical hamster ball animations entirely and rolls around the arena with his large body. </p>
+
+          <div class="wrapped-container">
+            <div class="centered wrapped-image" style="max-width: 1000px; margin:auto">
+              <div class="video-container" style="max-width: 800px;">
+                <video class="video-container" width="1280" height="720" autoplay loop muted style="border-radius: 20px;">
+                  <source src="../assets/tech-art/hamster-asset-pipeline.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="centered">Context Menu buttons automatically format spritesheet and setup Sprite Library Asset.</p>
+            </div>
+            <p>Each hamster in the game has distinct sprites and animations. I created a system and animation import pipelines to allow for using different sprite sheets for the same animations.</p>
+            <p>I created a custom Context Menu button in the Editor that automatically divides a spritesheet into individual sprites and then adds each sprite to a Sprite Library.</p>
+            <p>Our character animations choose the corresponding frame in the Sprite Library to render.</p>
+            <p>These tools I created resulted in faster importation of animation spritesheets that allowed for faster iteration and a larger cast of characters.</p>
+
+          </div>
+
+
+
+          <div class="horizontal">
+            <div class="centered" style="max-width: 600px; margin:auto">
+              <img src="../assets/tech-art/hamster-sprite-library.png" alt="" style="max-width: 100%; margin:auto;">
+              <p class="centered">Sprite Library Asset</p>
+            </div>
+            <div class="centered" style="max-width: 600px; margin:auto">
+              <div class="video-container" style="max-width: 600px;">
+                <video class="video-container" width="800" height="450" autoplay loop muted style="border-radius: 20px;">
+                  <source src="../assets/tech-art/hamster-run-anim.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="centered">Character Animations load corresponding sprite in Sprite Library.</p>
+            </div>
+          </div>
+
+          <p>This system allowed us to have unique sprite sheets for each character in the game while preserving clean code architecture. The most exciting usage of this feature was the game's final boss <b>Chunky Sandwich</b> who replaces the typical hamster ball animations entirely and rolls around the arena with his large body. </p>
           <img src="../assets/hamster/gif/hamster-05.gif" alt="">
         </details>
 
