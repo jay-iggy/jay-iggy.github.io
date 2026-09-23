@@ -48,6 +48,9 @@ button  {
   margin: 5px;
   width: 8rem;
 }
+button:hover{
+  cursor: pointer;
+}
 
 hlt{
   color: var(--highlight);
