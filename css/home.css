@@ -125,12 +125,14 @@
   width: 200px;
   font-size: 150%;
   background-color: var(--brightblue);
-
+  color: var(--babyblue);
   border: 1px solid var(--babyblue);
 
 }
 .tech-art-button:hover {
   scale: 110%;
   background-color: var(--linkcolor);
+  color: white;
+
   cursor: pointer;
 }
